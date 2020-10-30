@@ -31,18 +31,27 @@
             :model="searchform"
             ref='searchform'
           >
-            <el-form-item label="" v-model="searchform.search">
-                <el-input></el-input>
+            <el-form-item label="">
+                <el-input v-model="searchform.search" placeholder="请输入内容" prefix-icon="el-icon-search"></el-input>
             </el-form-item>
+            <el-button type="primary" icon="el-icon-search"></el-button>
           </el-form>
       </div>
+      <nav-menu index="1" navTitle="首页"></nav-menu>
+      <nav-menu index="2" navTitle="总社概况"></nav-menu>
+      <nav-menu index="3" navTitle="信息发布"></nav-menu>
+      <nav-menu index="4" navTitle="政策法规"></nav-menu>
+      <nav-menu index="5" navTitle="文件通知"></nav-menu>
+      <nav-menu index="6" navTitle="数据统计"></nav-menu>
+      <nav-menu index="7" navTitle="媒体关注"></nav-menu>
   </div>
 </template>
 
 <script>
+import navMenu from 'components/home/Navmenu'
 export default {
-  name:'headerBar',
-  components:{},
+  name:'Header',
+  components:{navMenu},
   data () {
     return {
         searchform:{
@@ -54,6 +63,12 @@ export default {
             checked:true,
         }
     }
+  },
+  methods: {
+      search(){
+          
+      },
+      
   }
 }
 </script>
