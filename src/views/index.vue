@@ -5,7 +5,9 @@
         <el-header>
             <header-bar></header-bar>
         </el-header>
-        <el-main>Main</el-main>
+        <el-main>
+          <picture-change></picture-change>
+        </el-main>
         <el-footer>
           <footer-bar></footer-bar>
         </el-footer>
@@ -16,10 +18,11 @@
 <script>
 import headerBar from 'components/home/Header';
 import footerBar from 'components/home/Footer';
+import pictureChange from 'components/home/PictureChange';
 
 export default {
   name:"index",
-  components:{headerBar,footerBar},
+  components:{headerBar,footerBar,pictureChange},
   data () {
     return {
     }
@@ -30,10 +33,15 @@ export default {
 <style  lang="less" scoped>
     .el-header{
         padding: 0px;
-        height: auto;
+        height: 250px !important;
     }
     .el-footer{
         height: auto;
+        padding: 0px;
+    }
+    .el-main{
+      min-height: calc(100vh - 200px);
+      padding: 10px;
     }
     
 </style>

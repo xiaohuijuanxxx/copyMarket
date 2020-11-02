@@ -37,21 +37,25 @@
             <el-button type="primary" icon="el-icon-search"></el-button>
           </el-form>
       </div>
-      <nav-menu index="1" navTitle="首页"></nav-menu>
-      <nav-menu index="2" navTitle="总社概况"></nav-menu>
-      <nav-menu index="3" navTitle="信息发布"></nav-menu>
-      <nav-menu index="4" navTitle="政策法规"></nav-menu>
-      <nav-menu index="5" navTitle="文件通知"></nav-menu>
-      <nav-menu index="6" navTitle="数据统计"></nav-menu>
-      <nav-menu index="7" navTitle="媒体关注"></nav-menu>
+      <nav-menu>
+          <nav-menu-item index="1" navTitle="首页"></nav-menu-item>
+          <nav-menu-item index="2" navTitle="总社概况"></nav-menu-item>
+          <nav-menu-item index="3" navTitle="信息发布"></nav-menu-item>
+          <nav-menu-item index="4" navTitle="政策法规"></nav-menu-item>
+          <nav-menu-item index="5" navTitle="政策法规"></nav-menu-item>
+          <nav-menu-item index="6" navTitle="文件通知"></nav-menu-item>
+          <nav-menu-item index="7" navTitle="数据统计"></nav-menu-item>
+          <nav-menu-item index="8" navTitle="媒体关注"></nav-menu-item>
+      </nav-menu>
   </div>
 </template>
 
 <script>
 import navMenu from 'components/home/Navmenu'
+import navMenuItem from 'components/home/NavmenuItem'
 export default {
   name:'Header',
-  components:{navMenu},
+  components:{navMenu,navMenuItem},
   data () {
     return {
         searchform:{

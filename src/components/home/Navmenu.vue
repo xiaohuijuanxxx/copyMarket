@@ -5,11 +5,10 @@
             :default-active="activeIndex"
             mode="horizontal"
             @select="handleSelect"
-            background-color="pink"
             text-color="#d78ca4"
             active-text-color="red"
           >
-                <el-menu-item class="menuItem" :index="index">{{navTitle}}</el-menu-item>
+            <slot></slot>
         </el-menu>
   </div>
 </template>
@@ -17,18 +16,14 @@
 <script>
 export default {
   name:'Navmenu',
-  props: {
-      index:String,
-      navTitle:String,
-  },
   data () {
     return {
-        activeIndex: '1',
+        activeIndex: '',
     }
   },
   methods: {
       handleSelect(key, keyPath) {
-        console.log(key, keyPath);
+       /*  console.log(key, keyPath); */
       }
   }
 }
@@ -36,9 +31,10 @@ export default {
 
 <style  lang="less" scoped>
     .menu{
-        display: flex;
+      display: flex;
+      background-color:pink;
     }
-    .menuItem{
-        flex:1;
+    .el-menu.el-menu--horizontal {
+        border-bottom: solid 1px #eaafb9;
     }
 </style>
