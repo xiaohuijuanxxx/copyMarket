@@ -7,9 +7,9 @@ module.exports = {
     configureWebpack: {
       resolve: {
         alias: {//起别名
-            'assets':resolve('@/assets'),
+            'assets':resolve('src/assets'),
             'components':resolve('src/components'),
-            'views':resolve('@/views'),
+            'views':resolve('src/views'),//不能写成‘@/views’
         }
       }
     },
