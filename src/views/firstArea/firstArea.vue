@@ -10,13 +10,18 @@
                 </el-carousel-item>
             </el-carousel>
         </el-aside>
-        <el-main>{{aaa()}}</el-main>
+        <el-main>
+            <article-head></article-head>
+        </el-main>
     </el-container>
 </template>
 
 <script>
+import articleHead from 'views/firstArea/articleHead'
+
 export default {
   name:'firstArea',
+  components: {articleHead},
   data () {
     return {
         pictureItem:[
@@ -29,21 +34,18 @@ export default {
     }
   },
   methods: {
-      aaa(){
-          let test ;
-          let id = test | 0;
-          return id;
-      }
-  },
-  components: {
 
-  }
+  },
 }
 </script>
 
 <style lang='less' scoped>
     .el-container{
-        height: 400px;
+        height: 300px;
+    }
+
+    .el-main{
+        padding: 0px;
     }
 
     .el-aside{
@@ -56,7 +58,7 @@ export default {
     }
 
     /deep/.el-carousel__indicators--horizontal{
-        left: 85%;
+        left: 83%;
     }
     
     /deep/.el-carousel__button{
@@ -69,6 +71,18 @@ export default {
       width: 30px;
       border-radius: 50%;
       height: 10px;
+    }
+
+    /deep/.el-tabs--border-card>.el-tabs__header{
+        background-color: #f3bfca;
+    }
+
+    /deep/.el-tabs--border-card>.el-tabs__header .el-tabs__item{
+        color: #d892b2;
+    }
+
+    /deep/.el-tabs--border-card>.el-tabs__header .el-tabs__item:not(.is-disabled):hover{
+        color: #dc4597;
     }
 
     .pictureP{
