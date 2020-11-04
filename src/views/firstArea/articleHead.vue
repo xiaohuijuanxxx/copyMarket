@@ -73,7 +73,7 @@ export default {
         text-overflow: ellipsis;
         position: relative;
         white-space: nowrap; //文本不换行，这样超出一行的部分被截取，显示...
-        border-bottom: 1px dashed #ccc;
+        border-bottom: 1px dashed #ccc;//下边框用虚线显示
     }
 
     .spot{
