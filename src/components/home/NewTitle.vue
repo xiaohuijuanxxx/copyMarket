@@ -1,6 +1,6 @@
 <template>
   <div class="newTitle">
-      <h3><a :href="title.href" target="_blank">{{title.titleName}}</a></h3>
+      <h1><a :href="title.href" target="_blank">{{title.titleName}}</a></h1>
       <p><a :href="title.href" target="_blank">{{title.contain}}</a></p>
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
     .newTitle{
         height: 110px;
 
-        h3{
+        h1{
             a{
                 text-decoration:none;
                 color:#dc4597;

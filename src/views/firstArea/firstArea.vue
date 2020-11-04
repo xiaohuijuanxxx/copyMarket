@@ -46,6 +46,7 @@ export default {
 
     .el-main{
         padding: 0px;
+        overflow: hidden;
     }
 
     .el-aside{

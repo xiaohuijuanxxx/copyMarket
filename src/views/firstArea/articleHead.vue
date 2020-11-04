@@ -1,7 +1,8 @@
 <template>
-    <el-tabs type="border-card" @tab-click="handleClick" v-model="activeName">
-        <el-tab-pane name="用户管理" label="用户管理">
-            <ul style="padding-left:20px">
+    <el-tabs type="border-card" @tab-click="handleClick" v-model="activeName" ref="navTabs">
+        <el-tab-pane name="用户管理">
+            <span slot="label" @mouseover="mouseover">用户管理</span>
+            <ul>
                 <li class="textOver" v-for="item in titleList" :key="item.id"><i class="spot"></i>{{item.title}}</li>
             </ul>
         </el-tab-pane>
@@ -31,25 +32,29 @@ export default {
 
     },
     mounted() {
-
+        
     },
     methods: {
         handleClick(tab, event) {
             if(this.activeName ==='用户管理'){}
             if(this.activeName === '配置管理'){}
         },
+        mouseover(tab, event){
+            console.log("aaa");
+            console.log(tab);
+            console.log(event);
+        }
     }
 };
 </script>
 
 <style scoped lang="less">
     .el-tabs--border-card{
-        height: 99%;
         background: #fae5e5;
     }
 
     /deep/.el-tabs__content{
-        padding: 10px;
+        padding: 5px;
     }
 
     /deep/.el-tabs__item.is-top.is-active{
@@ -58,7 +63,7 @@ export default {
 
     /deep/.el-tabs__item.is-top:last-child{
         position: absolute;
-        right: -120px;
+        right: -45%;
     }
 
     .pStyle{
@@ -69,6 +74,7 @@ export default {
 
     .textOver{
         padding: 9px;
+        text-align: left;
         overflow: hidden;
         text-overflow: ellipsis;
         position: relative;
