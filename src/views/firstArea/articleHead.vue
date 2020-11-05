@@ -6,10 +6,18 @@
                 <li class="textOver" v-for="item in titleList" :key="item.id"><i class="spot"></i>{{item.title}}</li>
             </ul>
         </el-tab-pane>
-        <el-tab-pane name="配置管理" label="配置管理">配置管理</el-tab-pane>
-        <el-tab-pane name="角色管理" label="角色管理">角色管理</el-tab-pane>
-        <el-tab-pane name="定时任务补偿" label="定时任务补偿">定时任务补偿</el-tab-pane>
-        <el-tab-pane name="更多+" label="更多+">更多+</el-tab-pane>
+        <el-tab-pane name="配置管理" label="配置管理">
+            <span slot="label" @mouseover="mouseover">配置管理</span>
+            配置管理</el-tab-pane>
+        <el-tab-pane name="角色管理" label="角色管理">
+            <span slot="label" @mouseover="mouseover">角色管理</span>
+            角色管理</el-tab-pane>
+        <el-tab-pane name="定时任务补偿" label="定时任务补偿">
+            <span slot="label" @mouseover="mouseover">定时任务补偿</span>
+            定时任务补偿</el-tab-pane>
+        <el-tab-pane name="更多+" label="更多+">
+            <span slot="label" @mouseover="mouseover">更多+</span>
+            更多+</el-tab-pane>
     </el-tabs>
 </template>
 
@@ -18,7 +26,7 @@ export default {
     name:'articleHead',
     data() {
         return {
-            activeName:"用户管理",
+            activeName:"配置管理",
             titleList:[
                 {id:0,title:"习近平：关于《中共中央关于制定国民经济和社会发展第十四个五年规划和二〇三五年远景目标的建议》的说明"},
                 {id:1,title:"中共中央关于制定国民经济和社会发展第十四个五年规划和二〇三五年远景目标的建议"},
@@ -40,9 +48,7 @@ export default {
             if(this.activeName === '配置管理'){}
         },
         mouseover(tab, event){
-            console.log("aaa");
-            console.log(tab);
-            console.log(event);
+            this.activeName = tab.fromElement.innerText;
         }
     }
 };
@@ -51,6 +57,7 @@ export default {
 <style scoped lang="less">
     .el-tabs--border-card{
         background: #fae5e5;
+        height: 100%;
     }
 
     /deep/.el-tabs__content{
@@ -63,7 +70,7 @@ export default {
 
     /deep/.el-tabs__item.is-top:last-child{
         position: absolute;
-        right: -45%;
+        right: -25%;
     }
 
     .pStyle{
